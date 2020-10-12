@@ -2,7 +2,7 @@
   <div class="getStarted">
       <p class="landing-title">Friendify</p>
       <p class="landing-subtitle">Compare your Spotify listening <br> with your friends</p>
-        <lottie-animation path="../assets/21008-social-media-concept.json"></lottie-animation>
+      <img src='../assets/21008-social-media-concept.gif'></img>
   </div>
 </template>
 
