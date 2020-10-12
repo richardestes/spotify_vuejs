@@ -27,7 +27,7 @@ h3 {
     color: white;
     font-weight:700;
     font-size: 20px;
-    width: 300px;
+    width: 150px;
     height: 80px;
 }
 .landing-title {
