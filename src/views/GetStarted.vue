@@ -3,6 +3,7 @@
       <p class="landing-title">Friendify</p>
       <p class="landing-subtitle">Compare your Spotify listening <br> with your friends</p>
       <img src='../assets/21008-social-media-concept.gif'>
+      <button type="submit" id="btn_get_started" class="btn btn-landing">Get Started</button>
   </div>
 </template>
 
@@ -20,6 +21,14 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+}
+.btn-landing {
+    background-color: #01007F !important;
+    color: white;
+    font-weight:700;
+    font-size: 20px;
+    width: 300px;
+    height: 80px;
 }
 .landing-title {
     font-family: 'Lato', sans-serif;
