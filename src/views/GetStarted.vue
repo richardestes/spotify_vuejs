@@ -2,7 +2,7 @@
   <div class="getStarted">
       <p class="landing-title">Friendify</p>
       <p class="landing-subtitle">Compare your Spotify listening <br> with your friends</p>
-      <img src='../assets/21008-social-media-concept.gif'></img>
+      <img src='../assets/21008-social-media-concept.gif'>
   </div>
 </template>
 
