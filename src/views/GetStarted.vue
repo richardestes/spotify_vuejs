@@ -24,8 +24,25 @@ export default {
   },
   methods: {
     redirectToSpotify() {
-      alert("Button pressed");
+      var clientId = '40babe1ec57c4ce8a664f8304f0da622';
+      var state = this.generateState();
+      var spotifyEndpoint = 'https://accounts.spotify.com/authorize';
+      var responseType = 'token';
+      var redirectUri = 'https://master.d2md2wozyn4l0c.amplifyapp.com/spotify.html';
+      var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played'
+      var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
+      window.location = requestUrl;
+      return;
     },
+    generateState() {
+        var length = 16;
+        var text = '';
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (var i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return text;
+    }
   },
 };
 </script>
