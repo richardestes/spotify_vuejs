@@ -31,6 +31,8 @@ export default {
 }
 .landing-image {
   padding-bottom: 30px;
+  width: 85%;
+  height: auto;
 }
 h3 {
   margin: 40px 0 0;
@@ -48,14 +50,14 @@ h3 {
 .landing-title {
   font-family: "Lato", sans-serif;
   font-weight: 900;
-  font-size: 80px;
+  font-size: 10vh;
   color: #01007f;
   margin-bottom: 0%;
 }
 .landing-subtitle {
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 3vh;
   padding-bottom: 1rem;
 }
 ul {
