@@ -6,7 +6,11 @@
       with your friends
     </p>
     <img src="../assets/21008-social-media-concept.gif" class="landing-image" />
-    <button type="submit" id="btn_get_started" class="btn btn-landing">
+    <button
+      v-on:click="redirectToSpotify"
+      id="btn_get_started"
+      class="btn btn-landing"
+    >
       Get Started
     </button>
   </div>
@@ -17,6 +21,11 @@ export default {
   name: "GetStarted",
   props: {
     msg: String,
+  },
+  methods: {
+    redirectToSpotify() {
+      alert("Button pressed");
+    },
   },
 };
 </script>
