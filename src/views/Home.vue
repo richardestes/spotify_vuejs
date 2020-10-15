@@ -33,8 +33,8 @@ export default {
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
       var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       console.log(requestUrl);
-      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=20')
-        .then(res => this.todos = res.data)
+      axios.get(requestUrl)
+        .then(res=>console.log(res))
         .catch(err=>console.log(err))
       
     },
