@@ -32,6 +32,9 @@ export default {
       var redirectUri = 'https://friendify.onrender.com/';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
       axios.get('https://jsonplaceholder.typicode.com/todos?_limit=20')
+        .then(res => this.todos = res.data)
+        .catch(err=>console.log(err))
+      
     },
     redirectToSpotify() {
       var clientId = '40babe1ec57c4ce8a664f8304f0da622';
