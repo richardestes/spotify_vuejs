@@ -6,7 +6,10 @@
 
 <script>
 export default {
-    name: "LandingPage"
+    name: "LandingPage",
+    created() {
+        console.log("Landing page running...");
+    }
 }
 </script>
 

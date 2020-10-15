@@ -7,7 +7,7 @@
     </p>
     <img src="../assets/21008-social-media-concept.gif" class="landing-image" />
     <button
-      v-on:click="redirectToSpotify"
+      v-on:click="requestAuthorization"
       id="btn_get_started"
       class="btn btn-landing"
     >
@@ -17,12 +17,22 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  name: "GetStarted",
+  name: "Home",
   props: {
     msg: String,
   },
   methods: {
+    requestAuthorization() {
+      var clientId = '40babe1ec57c4ce8a664f8304f0da622';
+      var authEndpoint = 'https://accounts.spotify.com/authorize';
+      var state = this.generateState();
+      var redirectUri = 'https://friendify.onrender.com/';
+      var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=20')
+    },
     redirectToSpotify() {
       var clientId = '40babe1ec57c4ce8a664f8304f0da622';
       var state = this.generateState();
