@@ -31,7 +31,7 @@ export default {
       var state = this.generateState();
       var redirectUri = 'https://friendify.onrender.com/';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
-      var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
+      var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       console.log(requestUrl);
       axios.get('https://jsonplaceholder.typicode.com/todos?_limit=20')
         .then(res => this.todos = res.data)
