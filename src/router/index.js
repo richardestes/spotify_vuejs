@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import GetStarted from '../views/GetStarted.vue'
-import LandingPage from '../views/LandingPage.vue'
 
 Vue.use(VueRouter)
 
