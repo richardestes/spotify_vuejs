@@ -29,7 +29,7 @@ export default {
       var clientId = '40babe1ec57c4ce8a664f8304f0da622';
       var authEndpoint = 'https://accounts.spotify.com/authorize';
       var state = this.generateState();
-      var redirectUri = 'https://friendify.onrender.com/';
+      var redirectUri = 'https://friendify.onrender.com/landingpage';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
       var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       console.log(requestUrl);
