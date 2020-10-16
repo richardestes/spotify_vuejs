@@ -32,7 +32,7 @@ export default {
       var responseType = 'code';
       var redirectUri = 'https://spotifystats.io/landingpage';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
-      var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&responseType=' + responseType + '&scope=' + scopes + '&state=' + state;
+      var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&response_type=' + responseType + '&scope=' + scopes + '&state=' + state;
       console.log(requestUrl);
       axios.get(requestUrl)
         .then(res=>console.log(res))
