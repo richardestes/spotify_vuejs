@@ -34,7 +34,10 @@ export default {
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played';
       var requestUrl = authEndpoint + '?client_id=' + clientId + '&redirect_uri=' + redirectUri + '&response_type=' + responseType + '&scope=' + scopes + '&state=' + state;
       console.log(requestUrl);
-      axios.get(requestUrl)
+      var config = {
+        headers: {'Access-Control-Allow-Origin': '*'}
+      };
+      axios.get(requestUrl,config)
         .then(res=>console.log(res))
         .catch(err=>console.log(err))
       
