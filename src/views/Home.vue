@@ -1,6 +1,6 @@
 <template>
   <div class="get-started-main">
-    <p class="landing-title">Friendify</p>
+    <p class="landing-title">SpotifyStats.io</p>
     <p class="landing-subtitle">
       Compare your Spotify listening <br />
       with your friends
