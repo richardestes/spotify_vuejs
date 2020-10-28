@@ -29,7 +29,7 @@ export default {
       var state = this.generateState();
       var spotifyEndpoint = 'https://accounts.spotify.com/authorize';
       var responseType = 'token';
-      var redirectUri = 'https://spotifystats.io/#';
+      var redirectUri = 'https://spotifystats.io/landingpage';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played'
       var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       window.location = requestUrl;
