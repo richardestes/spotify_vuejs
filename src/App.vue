@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <h1></h1>
+    <router-link to="/">Home</router-link>
+    <router-link to="/stats">Stats</router-link>
+    <router-link to="/social">Social</router-link>
+    <router-link to="/about">About</router-link>
     <hr>
   </div>
 </template>
