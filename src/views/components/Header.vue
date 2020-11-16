@@ -24,9 +24,11 @@ export default {
 .header-logo {
   display: flex;
   justify-content: start;
+  width: 30vw;
 }
 .header-links {
   display: flex;
   justify-content: end;
+  width: 60vw;
 }
 </style>
