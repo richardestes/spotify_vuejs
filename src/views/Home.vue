@@ -1,5 +1,6 @@
 <template>
   <div class="get-started-main">
+    <Header>
   </div>
 </template>
 
