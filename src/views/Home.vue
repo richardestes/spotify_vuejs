@@ -1,11 +1,10 @@
 <template>
   <div class="get-started-main">
-    <Header>
+    <Header></Header>
   </div>
 </template>
 
 <script>
-
 import Header from "../views/components/Header"
 
 export default {
