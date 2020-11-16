@@ -1,9 +1,9 @@
 <template>
 <div class="header">
-  <div class="d-flex header-logo">
+  <div class="header-logo">
       <router-link to="/">SpotifyStats.io</router-link>
   </div>
-  <div class="d-flex header-links">
+  <div class="header-links">
       <router-link to="/stats">Stats</router-link>
     <router-link to="/social">Social</router-link>
     <router-link to="/about">About</router-link>
@@ -22,9 +22,11 @@ export default {
   display: flex;
 }
 .header-logo {
+  display: flex;
   justify-content: start;
 }
 .header-links {
+  display: flex;
   justify-content: end;
 }
 </style>
