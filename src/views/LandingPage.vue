@@ -1,6 +1,7 @@
 <template>
     <div class = "landing-page-main">
         <p> Hello World </p>
+        <button>Get Started</button>
     </div>
 </template>
 
