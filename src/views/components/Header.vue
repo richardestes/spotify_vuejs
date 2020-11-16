@@ -39,7 +39,7 @@ export default {
   text-decoration: none;
   color: #0E0E0E;
 }
-.header-link:hover {
+.header-link a:hover {
   color:  #FF3057;
 }
 </style>
