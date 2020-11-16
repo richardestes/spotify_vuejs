@@ -1,7 +1,10 @@
 <template>
-  <div class="get-started-main">
+  <div class="main">
     <div id="nav">
-      <Header></Header>
+      <Header />
+    </div>
+    <div id="profile">
+      <!-- <Profile /> -->
     </div>
   </div>
 </template>
@@ -44,10 +47,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.get-started-main {
+.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 </style>
