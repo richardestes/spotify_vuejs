@@ -1,6 +1,8 @@
 <template>
   <div class="get-started-main">
-    <Header></Header>
+    <div id="nav">
+      <Header></Header>
+    </div>
   </div>
 </template>
 
