@@ -5,10 +5,14 @@
 </template>
 
 <script>
+import Header from "/components/Header"
 export default {
   name: "Home",
   props: {
     msg: String,
+  },
+  components : {
+    Header
   },
   methods: {
     redirectToSpotify() {
