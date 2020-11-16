@@ -4,9 +4,9 @@
       <router-link to="/">SpotifyStats.io</router-link>
   </div>
   <div class="header-links">
-      <router-link to="/stats">Stats</router-link>
-    <router-link to="/social">Social</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link to="/stats" class="header-link">Stats</router-link>
+    <router-link to="/social" class="header-link">Social</router-link>
+    <router-link to="/about" class="header-link">About</router-link>
   </div>
 </div>
 </template>
@@ -29,6 +29,10 @@ export default {
 .header-links {
   display: flex;
   justify-content: end;
-  width: 60vw;
+  width: 80vw;
+}
+.header-link{
+  padding-left: 10px;
+  text-decoration: none;
 }
 </style>
