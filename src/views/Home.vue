@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import Header from "../views/components/Header"
+import Header from '../views/components/Header'
+
 export default {
   name: "Home",
   props: {
