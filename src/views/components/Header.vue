@@ -37,8 +37,9 @@ export default {
 .header-link{
   padding-left: 10px;
   text-decoration: none;
+  color: #0E0E0E;
 }
 .header-link:hover {
-  color: #FF3057;
+  color:  #FF3057;
 }
 </style>
