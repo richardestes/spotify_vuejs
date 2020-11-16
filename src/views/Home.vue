@@ -6,7 +6,7 @@
 
 <script>
 
-import Header from "/components/Header"
+import Header from "../views/components/Header"
 
 export default {
   name: "Home",
