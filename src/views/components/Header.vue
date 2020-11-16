@@ -39,6 +39,6 @@ export default {
   text-decoration: none;
 }
 .header-link:hover {
-  background-color: #FF3057;
+  color: #FF3057;
 }
 </style>
