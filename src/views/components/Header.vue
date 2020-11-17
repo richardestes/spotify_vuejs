@@ -20,6 +20,8 @@ export default {
 <style scoped>
 .header {
   display: flex;
+  padding: 30px;
+  color: #2c3e50
 }
 .header-logo-container {
   display: flex;
@@ -34,12 +36,12 @@ export default {
   justify-content: end;
   width: 80vw;
 }
-.header-link{
+.header-links a{
   padding-left: 10px;
   text-decoration: none;
   color: #0E0E0E;
 }
-.header-link a:hover {
+.header-links a:hover {
   color:  #FF3057;
 }
 </style>
