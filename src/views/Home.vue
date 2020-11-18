@@ -27,7 +27,7 @@ export default {
       var spotifyEndpoint = 'https://accounts.spotify.com/authorize';
       var responseType = 'token';
       // http://localhost:8080/#/ http://192.168.1.83:8081/#/ https://spotifystats.io/stats/#/
-      var origin = window.location.origin;
+      var origin = window.location.href;
       var redirectUri = origin + '/stats';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played'
       var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
