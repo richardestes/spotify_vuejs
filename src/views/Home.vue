@@ -27,8 +27,8 @@ export default {
       var spotifyEndpoint = 'https://accounts.spotify.com/authorize';
       var responseType = 'token';
       //TODO: Make this dynamic
-      // var redirectUri = 'http://localhost:8080/stats';
-      var redirectUri  = 'https://spotifystats.io/stats';
+      var redirectUri = 'http://localhost:8080/stats';
+      // var redirectUri  = 'https://spotifystats.io/stats';
       var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played'
       var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       window.location = requestUrl;
