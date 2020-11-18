@@ -38,6 +38,8 @@ export default {
       // Gets token
       var access_token = this.$route.hash.substring(14,206);
       this.token = access_token;
+      if (this.token)
+        this.getUserInfo(this.token);
     }
     else {
       window.alert('No Token Found')
