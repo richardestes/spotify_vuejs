@@ -4,6 +4,7 @@
       <Header />
     </div>
     <p>{{token}}</p>
+    <button v-on:click="getUserInfo(token)">Get User Info</button>
   </div>
 </template>
 
@@ -13,17 +14,25 @@ export default {
   name: "Stats",
   data() {
     return {
-      token: ''
+      token: '',
+      userInfo: '',
     }
   },
   components: {
     Header
   },
   methods : {
-    getUserTracks(){
-      
-    }
+    async getUserInfo(token){
+      const result = await fetch(`https://api.spotify.com/v1/me`, {
+        method: 'GET',
+        headers: { 'Authorization': 'Bearer ' + token }
+        });
+        const response = await result.json();
+        this.userInfo = response;
+        return response;
+    } 
   },
+  
   created() {
     if (this.$route.hash) {
       // Gets token
