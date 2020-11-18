@@ -40,6 +40,7 @@ export default {
 }
 .header-links a{
   padding-left: 10px;
+  padding-right: 10px;
   text-decoration: none;
   color: #0E0E0E;
   font-weight: bold;
