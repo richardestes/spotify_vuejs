@@ -13,12 +13,20 @@
         v-bind:followerCount="userInfo.followers.total"
      />
     </div>
+    <div id="topTracks">
+      <List v-bind:list="userTopTracks" v-bind:listName="topSongHeader"/>
+    </div>
+    <div id="topArtists">
+      <List v-bind:list="userTopArtists" v-bind:listName="topArtistHeader"/>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "../views/components/Header"
 import ProfileStats from "../views/components/ProfileStats"
+import List from "../views/components/List"
+
 export default {
   name: "Stats",
   data() {
@@ -29,11 +37,16 @@ export default {
       userTracks: '',
       userPlaylists: '',
       url: '',
+      userTopTracks: '',
+      userTopArtists: '',
+      topSongHeader: 'Top Songs',
+      topArtistHeader: 'Top Artists',
     }
   },
   components: {
     Header,
-    ProfileStats
+    ProfileStats,
+    List
   },
   methods : {
     async getUserInfo(token){
@@ -41,21 +54,21 @@ export default {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
         });
-        const response = await result.json();
-        if (response){
-          this.userInfo = response;
-          this.userId = this.userInfo.id;
-        }
-        return response;
+      const response = await result.json();
+      if (response){
+        this.userInfo = response;
+        this.userId = this.userInfo.id;
+      }
+      return response;
     },
     async getUserTracks(token){
       const result = await fetch(`https://api.spotify.com/v1/me/tracks`, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
         });
-        const response = await result.json();
-        this.userTracks = response;
-        return response;
+      const response = await result.json();
+      this.userTracks = response;
+      return response;
     },
     async getUserPlaylists(token,userId){
       this.url = `https://api.spotify.com/v1/users/${userId}/playlists`;
@@ -63,9 +76,31 @@ export default {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
         });
-        const response = await result.json();
-        this.userPlaylists = response;
-        return response;
+      const response = await result.json();
+      this.userPlaylists = response;
+      return response;
+    },
+    //TODO: Add time range parameter
+    async getTopTracks(token){
+      this.url = `https://api.spotify.com/v1/me/top/tracks`;
+      const result = await fetch(this.url, {
+        method: 'GET',
+        headers: { 'Authorization': 'Bearer ' + token }
+        });
+      const response = await result.json();
+      this.userTopTracks = response;
+      return response;
+    },
+    //TODO: Add time range parameter
+    async getTopArtists(token) {
+      this.url = `https://api.spotify.com/v1/me/top/artists`;
+      const result = await fetch(this.url, {
+        method: 'GET',
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      const response = await result.json();
+      this.userTopArtists = response;
+      return response;
     }
   },
   
@@ -79,6 +114,8 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
+          this.getTopTracks(this.token);
+          this.getTopArtists(this.token);
         });
       }
     }

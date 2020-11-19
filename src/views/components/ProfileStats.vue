@@ -1,6 +1,6 @@
 <template>
-  <div id="main">
-    <div id ="userHeaderInfo">
+  <div class="main">
+    <div class="userHeaderInfo">
       <h1>Full Name: {{displayName}}</h1>
       <h2>Username: {{username}}</h2>
       <img v-bind:src=profilePic class="profilePic"/>
@@ -32,6 +32,5 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
 
