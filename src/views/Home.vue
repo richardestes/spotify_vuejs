@@ -4,7 +4,7 @@
       <Header />
     </div>
     <div id="profile">
-      <button v-on:click="redirectToSpotify">Get Started</button>
+      <button class="getStartedButton" v-on:click="redirectToSpotify">Get Started</button>
     </div>
   </div>
 </template>
@@ -53,5 +53,19 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.getStartedButton {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  background-color:  #FF3057;
+  border-radius: 10px;
+  border: none;
+  width: 60%;
+  height: 10vh;
+  color:white;
+  /* Adjust the following values, it's just
+   * going to be trial and error: */
+  padding: 0.25rem 0.35rem;
+  font-size: calc(1rem + 1vw);
 }
 </style>

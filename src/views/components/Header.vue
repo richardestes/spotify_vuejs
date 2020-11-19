@@ -21,7 +21,8 @@ export default {
 .header {
   display: flex;
   padding: 30px;
-  color: #2c3e50
+  color: #2c3e50;
+  font-size: calc(.6rem + 1vw);
 }
 .header-logo-container {
   display: flex;
