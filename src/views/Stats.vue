@@ -82,7 +82,7 @@ export default {
     },
     //TODO: Add time range parameter
     async getTopTracks(token,time_range){
-      this.url = `https://api.spotify.com/v1/me/top/tracks?=${time_range}`;
+      this.url = `https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}`;
       const result = await fetch(this.url, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
@@ -93,7 +93,7 @@ export default {
     },
     //TODO: Add time range parameter
     async getTopArtists(token,time_range) {
-      this.url = `https://api.spotify.com/v1/me/top/artists${time_range}`;
+      this.url = `https://api.spotify.com/v1/me/top/artists?time_range=${time_range}`;
       const result = await fetch(this.url, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
