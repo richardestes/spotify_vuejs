@@ -69,6 +69,9 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
+          console.log(this.userInfo);
+          console.log(this.userTracks);
+          console.log(this.userPlaylists);
         });
       }
     }
