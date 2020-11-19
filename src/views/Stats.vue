@@ -14,14 +14,14 @@
      />
     </div>
     <div id="topTracks">
-      <h1>Top Songs</h1>
+      <h1>Top Songs ({{songButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
       <List v-bind:list="userTopTracks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
-      <h1>Top Artists</h1>
+      <h1>Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
@@ -49,6 +49,8 @@ export default {
       userTopArtists: '',
       topSongHeader: 'Top Songs',
       topArtistHeader: 'Top Artists',
+      songButtonChoice: '',
+      artistButtonChoice: '',
     }
   },
   components: {
@@ -97,6 +99,17 @@ export default {
         });
       const response = await result.json();
       this.userTopTracks = response;
+      switch(time_range){
+        case 'short_term':
+          this.songButtonChoice = 'Past 4 Weeks';
+          break;
+        case 'medium_term':
+          this.songButtonChoice = 'Past 6 Months';
+          break;
+        case 'long_term':
+          this.songButtonChoice = 'All Time';
+          break;
+      }
       return response;
     },
     //TODO: Add time range parameter
@@ -108,6 +121,17 @@ export default {
       });
       const response = await result.json();
       this.userTopArtists = response;
+      switch(time_range){
+        case 'short_term':
+          this.artistButtonChoice = 'Past 4 Weeks';
+          break;
+        case 'medium_term':
+          this.artistButtonChoice = 'Past 6 Months';
+          break;
+        case 'long_term':
+          this.artistButtonChoice = 'All Time';
+          break;
+      }
       return response;
     }
   },
