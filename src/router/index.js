@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 // import Social from '../views/Social.vue'
 import Stats from '../views/Stats.vue'
 // import About from '../views/About.vue'
+import PageNotFound from '../views/components/PageNotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +18,11 @@ const routes = [
     path: '/stats',
     name: 'Stats',
     component: Stats,
-  }
+  },
+  {
+    path: '/*',
+    component: PageNotFound
+  },
 ]
 
 const router = new VueRouter({
