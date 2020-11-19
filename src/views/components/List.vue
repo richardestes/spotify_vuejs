@@ -1,6 +1,8 @@
 <template>
   <div class="main">
-    <li class="listItem" v-for="(item,index) in list.items" :key="item.name" >{{index+1}} - {{item.name}}</li>
+    <li class="listItem" v-for="(item,index) in list.items" :key="item.name" >
+      <h3 class="listNumber">{{index+1}}</h3><h3 class="listTitle"> - {{item.name}}</h3>
+    </li>
   </div>
 </template>
 
@@ -15,7 +17,15 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  flex-wrap: nowrap;
+}
 .listItem{
-  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.listNumber {
+  color:  #FF3057;
 }
 </style>
