@@ -1,12 +1,12 @@
 <template>
   <div id="main">
     <div id ="userHeaderInfo">
-      <h1>{{displayName}}</h1>
-      <h2>{{username}}</h2>
+      <h1>Full Name: {{displayName}}</h1>
+      <h2>Username: {{username}}</h2>
       <img v-bind:src=profilePic class="profilePic"/>
-      <p>{{songCount}}</p>
-      <p>{{playlistCount}}</p>
-      <p>{{followerCount}}</p>
+      <p>Songs Saved: {{songCount}}</p>
+      <p>Playlists Created: {{playlistCount}}</p>
+      <p>Followers: {{followerCount}}</p>
     </div>
   </div>
 </template>
