@@ -14,9 +14,17 @@
      />
     </div>
     <div id="topTracks">
+      <h1>Top Songs</h1>
+      <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
+      <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
+      <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
       <List v-bind:list="userTopTracks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
+      <h1>Top Artists</h1>
+      <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
+      <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
+      <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
       <List v-bind:list="userTopArtists" v-bind:listName="topArtistHeader"/>
     </div>
   </div>
@@ -131,5 +139,27 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.topTracks {
+  display: flex;
+  padding: 30px;
+}
+.topArtists {
+  padding: 30px;
+  display: flex;
+}
+.toggleButton {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  background-color:  #FF3057;
+  border-radius: 10px;
+  border: none;
+  width: 25vw;
+  height: 10vh;
+  color:white;
+  /* Adjust the following values, it's just
+   * going to be trial and error: */
+  font-size: calc(0.3rem + 1.2vw);
+  margin: 3vw
 }
 </style>

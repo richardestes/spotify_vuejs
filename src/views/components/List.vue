@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <h1>{{listName}}</h1>
     <li class="listItem" v-for="(item,index) in list.items" :key="item.name" >{{index+1}} - {{item.name}}</li>
   </div>
 </template>
@@ -17,6 +16,6 @@ export default {
 
 <style scoped>
 .listItem{
-  padding: 6px;
+  padding: 10px;
 }
 </style>

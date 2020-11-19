@@ -32,5 +32,8 @@ export default {
 </script>
 
 <style scoped>
+.profilePic {
+  border-radius: 50%;
+}
 </style>
 
