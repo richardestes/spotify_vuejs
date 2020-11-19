@@ -11,6 +11,7 @@
         v-bind:songCount="userTracks.total"
         v-bind:playlistCount="userPlaylists.total"
         v-bind:followerCount="userInfo.followers.total"
+        v-bind:userUrl="userInfo.href"
      />
     </div>
     <div id="topTracks">
@@ -51,6 +52,7 @@ export default {
       topArtistHeader: 'Top Artists',
       songButtonChoice: '',
       artistButtonChoice: '',
+      userUrl: '',
     }
   },
   components: {
@@ -68,6 +70,7 @@ export default {
       if (response){
         this.userInfo = response;
         this.userId = this.userInfo.id;
+        this.userUrl = this.userInfo.href;
       }
       return response;
     },
@@ -162,7 +165,16 @@ export default {
 .main {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 100%;
+  /* width: 100%; */
+}
+.profileStats {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
 }
 .topTracks {
   display: flex;
