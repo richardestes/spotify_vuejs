@@ -81,8 +81,8 @@ export default {
       return response;
     },
     //TODO: Add time range parameter
-    async getTopTracks(token){
-      this.url = `https://api.spotify.com/v1/me/top/tracks`;
+    async getTopTracks(token,time_range){
+      this.url = `https://api.spotify.com/v1/me/top/tracks?=${time_range}`;
       const result = await fetch(this.url, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
@@ -92,8 +92,8 @@ export default {
       return response;
     },
     //TODO: Add time range parameter
-    async getTopArtists(token) {
-      this.url = `https://api.spotify.com/v1/me/top/artists`;
+    async getTopArtists(token,time_range) {
+      this.url = `https://api.spotify.com/v1/me/top/artists${time_range}`;
       const result = await fetch(this.url, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
@@ -114,8 +114,8 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
-          this.getTopTracks(this.token);
-          this.getTopArtists(this.token);
+          this.getTopTracks(this.token,"long_term");
+          this.getTopArtists(this.token,"long_term");
         });
       }
     }
