@@ -3,13 +3,22 @@
     <div id="nav">
       <Header />
     </div>
-    <p>{{token}}</p>
-    <button v-on:click="getUserInfo(token)">Get User Info</button>
+    <div id="profileStats">
+      <ProfileStats
+        v-bind:displayName="userInfo.display_name"
+        v-bind:username="userInfo.id"
+        v-bind:profilePic="userInfo.images[0].url"
+        v-bind:songCount="userTracks.total"
+        v-bind:playlistCount="userPlaylists.total"
+        v-bind:followerCount="userInfo.followers.total"
+     />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "../views/components/Header"
+import ProfileStats from "../views/components/ProfileStats"
 export default {
   name: "Stats",
   data() {
@@ -23,7 +32,8 @@ export default {
     }
   },
   components: {
-    Header
+    Header,
+    ProfileStats
   },
   methods : {
     async getUserInfo(token){
@@ -69,9 +79,6 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
-          console.log(this.userInfo);
-          console.log(this.userTracks);
-          console.log(this.userPlaylists);
         });
       }
     }
