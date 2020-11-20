@@ -27,7 +27,7 @@ export default {
 }
 .header-logo-container {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 50vw;
 }
 .header-logo {
@@ -37,7 +37,7 @@ export default {
 }
 .header-links {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 50vw;
 }
 .header-links a{
