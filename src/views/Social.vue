@@ -29,6 +29,8 @@ export default {
   display: flex;
   flex-direction: column;
   max-width: 100%;
+  align-items: center;
+  justify-content: center;
   /* width: 100%; */
 }
 </style>
