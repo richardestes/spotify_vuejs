@@ -51,21 +51,23 @@ export default {
   width: 100%;
   align-items: center;
   justify-content: center;
+  padding-left:4vw;
 }
 .profilePicContainer {
   justify-content: center;
-  width: 15%;
-  margin-right: -20px;
+  width:13%;
+  padding: 1vw;
 }
 .profilePic {
   border-radius: 50%;
-  width: 9vw;
+  width:100%;
 }
 .profileNameContainer {
   text-align: left;
-  width:20%;
+  width:15%;
   display: flex;
   flex-direction: column;
+  padding-right:20px;
 }
 .profileFullName {
   color: #0E0E0E;
@@ -73,44 +75,45 @@ export default {
   text-decoration: none;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
-  font-size: calc(1rem + 1vw);
+  font-size: 2.2vw;
 }
 .profileUsername {
   color: #747474;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: normal;
-  font-size: calc(.2rem + 0.7vw);
+  font-size: 1.4vw;
   text-decoration: none;
 }
 .songsContainer {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-right: 10vw;
+  width:20%;
 }
 .statCount{
   color:  #FF3057;
-  font-weight: bolder;
+  font-weight: bold;
   margin:0px;
   padding-bottom: 1vh;
+  font-size: 3vw;
 }
 .statCountTitle {
   font-weight:bold;
   margin: 0px;
   color: #0E0E0E;
-  font-size: calc(.5rem + .8vw);
+  font-size: calc(.2rem + 1vw);
 }
 .playlistsContainer {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-right: 10vw;
+  width:20%;
 }
 .followersContainer{
   display: flex;
   flex-direction: column;
-  text-align: left; 
-  margin-right: 10vw;
+  text-align: left;
+  width:20%;
 }
 </style>
 

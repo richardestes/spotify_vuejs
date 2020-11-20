@@ -171,7 +171,7 @@ export default {
       }      
     }
     else {
-      window.alert('No Token Found')
+      window.alert('No Token Found');
     }
   }
 }
@@ -191,6 +191,7 @@ export default {
   width: 200px;
   align-items: center;
   justify-content: center;
+  height: 25vh;
 }
 .topTracks {
   display: flex;

@@ -20,9 +20,9 @@ export default {
 <style scoped>
 .header {
   display: flex;
-  padding: 30px;
+  padding: 10px;
   color: #2c3e50;
-  font-size: calc(.6rem + 1vw);
+  font-size: 1.4vw;
   padding-bottom: 10vh;
 }
 .header-logo-container {
