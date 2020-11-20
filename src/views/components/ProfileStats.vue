@@ -101,6 +101,7 @@ export default {
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-left:20px;
   padding-right: 20px;
 }
 .statCount{
@@ -120,6 +121,7 @@ export default {
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-left:20px;
   padding-right: 20px;
 }
 .followersContainer{
@@ -127,6 +129,7 @@ export default {
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-left:20px;
   padding-right: 20px;
 }
 </style>
