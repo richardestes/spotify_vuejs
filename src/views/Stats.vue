@@ -144,6 +144,7 @@ export default {
       // Gets token
       var access_token = this.$route.hash.substring(14,206);
       this.token = access_token;
+      localStorage.setItem('token',this.token);
       // Main GET
       if (this.token){
         this.getUserInfo(this.token).then(()=>{
@@ -153,6 +154,21 @@ export default {
           this.getTopArtists(this.token,"long_term");
         });
       }
+    }
+    else if (localStorage.getItem('token')){
+      // Gets token
+      access_token = localStorage.getItem('token');
+      this.token = access_token;
+      localStorage.setItem('token',this.token);
+      // Main GET
+      if (this.token){
+        this.getUserInfo(this.token).then(()=>{
+          this.getUserTracks(this.token);
+          this.getUserPlaylists(this.token,this.userId);
+          this.getTopTracks(this.token,"long_term");
+          this.getTopArtists(this.token,"long_term");
+        });
+      }      
     }
     else {
       window.alert('No Token Found')

@@ -12,6 +12,14 @@ import Header from '../views/components/Header'
 export default {
   components: {
     Header
+  },
+  data() {
+    return {
+      token: ''
+    }
+  },
+  created() {
+    this.token = localStorage.getItem('token');
   }
 }
 </script>

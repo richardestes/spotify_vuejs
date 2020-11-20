@@ -1,5 +1,34 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="main">
+    <div class="nav">
+      <Header />
+    </div>
+    <h2>About</h2>
   </div>
 </template>
+
+<script>
+import Header from '../views/components/Header'
+export default {
+  components: {
+    Header
+  },
+  data() {
+    return {
+      token: ''
+    }
+  },
+  created() {
+    this.token = localStorage.getItem('token');
+  }
+}
+</script>
+
+<style scoped>
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  /* width: 100%; */
+}
+</style>

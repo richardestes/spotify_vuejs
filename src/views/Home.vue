@@ -20,6 +20,11 @@ export default {
   components : {
     Header
   },
+  data() {
+    return {
+      token: ''
+    }
+  },
   methods: {
     redirectToSpotify() {
       var clientId = '40babe1ec57c4ce8a664f8304f0da622';
@@ -44,6 +49,9 @@ export default {
         return text;
     }
   },
+  created() {
+    this.token = localStorage.getItem('token');
+  }
 };
 </script>
 
