@@ -1,23 +1,27 @@
 <template>
   <div class="mainContainer">
-    <div class="profilePicContainer">
-      <a v-bind:href="userUrl"><img v-bind:url="userUrl" v-bind:src=profilePic class="profilePic"/></a>
+    <div class="profileContainer">
+      <div class="profilePicContainer">
+        <a v-bind:href="userUrl"><img v-bind:url="userUrl" v-bind:src=profilePic class="profilePic"/></a>
+      </div>
+      <div class ="profileNameContainer">
+        <a v-bind:href="userUrl" class="profileFullName">{{displayName}}</a>
+        <a v-bind:href="userUrl" class="profileUsername">@{{username}}</a>
+      </div>
     </div>
-    <div class ="profileNameContainer">
-      <a v-bind:href="userUrl" class="profileFullName">{{displayName}}</a>
-      <a v-bind:href="userUrl" class="profileUsername">@{{username}}</a>
-    </div>
-    <div class="songsContainer">
-      <h1 class="statCount">{{songCount}}</h1>
-      <h2 class="statCountTitle">Songs Saved</h2>
-    </div>
-    <div class="playlistsContainer">
-      <h1 class="statCount">{{playlistCount}}</h1>
-      <h2 class="statCountTitle">Playlists Created</h2>
-    </div>
-    <div class="followersContainer">
-      <h1 class="statCount">{{followerCount}}</h1>
-      <h2 class="statCountTitle">Followers</h2>
+    <div class="statsContainer">
+      <div class="songsContainer">
+        <h1 class="statCount">{{songCount}}</h1>
+        <h2 class="statCountTitle">Songs Saved</h2>
+      </div>
+      <div class="playlistsContainer">
+        <h1 class="statCount">{{playlistCount}}</h1>
+        <h2 class="statCountTitle">Playlists Created</h2>
+      </div>
+      <div class="followersContainer">
+        <h1 class="statCount">{{followerCount}}</h1>
+        <h2 class="statCountTitle">Followers</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -50,12 +54,20 @@ export default {
   flex-direction: row;
   width: 100%;
   align-items: center;
-  justify-content: center;
   padding-left:4vw;
+}
+.profileContainer {
+  display:flex;
+  width: 50%;
+  justify-content: center;
+}
+.statsContainer {
+  width:50%;
+  display: flex;
 }
 .profilePicContainer {
   justify-content: center;
-  width:13%;
+  width:17%;
   padding: 1vw;
 }
 .profilePic {
@@ -64,10 +76,10 @@ export default {
 }
 .profileNameContainer {
   text-align: left;
-  width:15%;
   display: flex;
   flex-direction: column;
-  padding-right:20px;
+  justify-content: center;
+  align-content: center;
 }
 .profileFullName {
   color: #0E0E0E;
@@ -75,13 +87,13 @@ export default {
   text-decoration: none;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
-  font-size: 2.2vw;
+  font-size: 2vw;
 }
 .profileUsername {
   color: #747474;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: normal;
-  font-size: 1.4vw;
+  font-size: 1vw;
   text-decoration: none;
 }
 .songsContainer {
@@ -89,12 +101,12 @@ export default {
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-right: 20px;
 }
 .statCount{
   color:  #FF3057;
   font-weight: bold;
   margin:0px;
-  padding-bottom: 1vh;
   font-size: 3vw;
 }
 .statCountTitle {
@@ -108,12 +120,14 @@ export default {
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-right: 20px;
 }
 .followersContainer{
   display: flex;
   flex-direction: column;
   text-align: left;
   width:20%;
+  padding-right: 20px;
 }
 </style>
 
