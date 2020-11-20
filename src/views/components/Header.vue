@@ -22,7 +22,7 @@ export default {
   display: flex;
   padding: 10px;
   color: #2c3e50;
-  font-size: 1.4vw;
+  font-size: calc(0.3rem + 1vw);
   padding-bottom: 10vh;
 }
 .header-logo-container {
