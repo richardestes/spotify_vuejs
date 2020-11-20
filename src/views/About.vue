@@ -4,6 +4,7 @@
       <Header />
     </div>
     <h2>About</h2>
+    <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
   </div>
 </template>
 
@@ -29,6 +30,12 @@ export default {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  /* width: 100%; */
+  justify-content: center;
+  align-content: center;
+  background-color: #FFFFF9;
+}
+.aboutImage {
+  width: 30vw;
+  align-self: center;
 }
 </style>
