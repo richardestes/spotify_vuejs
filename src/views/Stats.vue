@@ -11,7 +11,7 @@
         v-bind:songCount="userTracks.total"
         v-bind:playlistCount="userPlaylists.total"
         v-bind:followerCount="userInfo.followers.total"
-        v-bind:userUrl="userInfo.href"
+        v-bind:userUrl="userUrl"
      />
     </div>
     <div id="topTracks">
@@ -70,7 +70,7 @@ export default {
       if (response){
         this.userInfo = response;
         this.userId = this.userInfo.id;
-        this.userUrl = this.userInfo.href;
+        this.userUrl = 'https://open.spotify.com/user/' + this.userId;
       }
       return response;
     },

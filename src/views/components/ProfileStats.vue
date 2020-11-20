@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div class="profilePicContainer">
-      <img v-bind:src=profilePic class="profilePic"/>
+      <a v-bind:href="userUrl"><img v-bind:url="userUrl" v-bind:src=profilePic class="profilePic"/></a>
     </div>
     <div class ="profileNameContainer">
       <a v-bind:href="userUrl" class="profileFullName">{{displayName}}</a>
