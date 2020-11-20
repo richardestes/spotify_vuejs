@@ -28,7 +28,7 @@ export default {
 .header-logo-container {
   display: flex;
   justify-content: start;
-  width: 30vw;
+  width: 50vw;
 }
 .header-logo {
   text-decoration: none;
@@ -38,7 +38,7 @@ export default {
 .header-links {
   display: flex;
   justify-content: end;
-  width: 80vw;
+  width: 50vw;
 }
 .header-links a{
   padding-left: 10px;
