@@ -4,7 +4,7 @@
       <Header />
     </div>
     <div class="getStartedContainer">
-      <img v-bind:src="require('../assets/home.gif')" class="getStartedGif" />
+      <img v-bind:src="require('../assets/21008-social-media-concept.gif')" class="getStartedGif" />
       <button class="getStartedButton" v-on:click="redirectToSpotify">Get Started</button>
     </div>
   </div>
@@ -63,6 +63,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #FFFFFF;
 }
 .getStartedButton {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -70,7 +71,7 @@ export default {
   background-color:  #FF3057;
   border-radius: 10px;
   border: none;
-  width: 60%;
+  width: 60vw;
   height: 10vh;
   color:white;
   /* Adjust the following values, it's just
@@ -78,7 +79,7 @@ export default {
   padding: 0.25rem 0.35rem;
   font-size: calc(1rem + 1vw);
   position:absolute;
-  bottom:20px;
+  bottom:40px;
 }
 .getStartedContainer {
   display: flex;
@@ -87,7 +88,7 @@ export default {
   align-items: center;
 }
 .getStartedGif {
-  width: 20vw;
+  width: 30vw;
   padding-bottom: 40px;
 }
 </style>

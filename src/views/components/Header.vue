@@ -41,8 +41,8 @@ export default {
   width: 50vw;
 }
 .header-links a{
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   text-decoration: none;
   color: #0E0E0E;
   font-weight: bold;
