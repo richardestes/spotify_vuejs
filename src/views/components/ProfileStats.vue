@@ -58,17 +58,17 @@ export default {
 }
 .profileContainer {
   display:flex;
-  width: 50%;
+  width: 25%;
   justify-content: center;
 }
 .statsContainer {
-  width:50%;
+  width:75%;
   display: flex;
 }
 .profilePicContainer {
   justify-content: center;
-  width:17%;
-  padding: 1vw;
+  width:8vw;
+  padding-right: 5px;
 }
 .profilePic {
   border-radius: 50%;
@@ -108,13 +108,13 @@ export default {
   color:  #FF3057;
   font-weight: bold;
   margin:0px;
-  font-size: 3vw;
+  font-size: 3.5vw;
 }
 .statCountTitle {
   font-weight:bold;
   margin: 0px;
   color: #0E0E0E;
-  font-size: calc(.2rem + 1vw);
+  font-size: calc(.25rem + 1vw);
 }
 .playlistsContainer {
   display: flex;
