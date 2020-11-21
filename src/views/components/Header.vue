@@ -23,7 +23,7 @@ export default {
   padding: 10px;
   color: #2c3e50;
   font-size: calc(0.3rem + 1vw);
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 }
 .header-logo-container {
   display: flex;

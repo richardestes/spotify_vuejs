@@ -15,14 +15,14 @@
      />
     </div>
     <div id="topTracks">
-      <h1>Top Songs ({{songButtonChoice}})</h1>
+      <h1 class ="topSongsTitle">Top Songs ({{songButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
       <List v-bind:list="userTopTracks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
-      <h1>Top Artists ({{artistButtonChoice}})</h1>
+      <h1 class="topArtistsTitle">Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
@@ -208,11 +208,17 @@ export default {
   border-radius: 10px;
   border: none;
   width: 25vw;
-  height: 10vh;
+  height: 6vh;
   color:white;
   /* Adjust the following values, it's just
    * going to be trial and error: */
   font-size: calc(0.3rem + 1.2vw);
   margin: 3vw
+}
+.topSongsTitle {
+  font-size: calc(0.8rem + 1vw);
+}
+.topArtistsTitle {
+  font-size: calc(0.8rem + 1vw);
 }
 </style>
