@@ -88,7 +88,7 @@ export default {
   align-items: center;
 }
 .getStartedGif {
-  width: 30vw;
+  width: 20vw;
   padding-bottom: 40px;
 }
 </style>
