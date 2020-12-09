@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <div id="nav">
+    <div v-if="loading">Loading some data</div>
+    <div class="nav">
       <Header />
     </div>
     <div class="getStartedContainer">
@@ -11,7 +12,7 @@
 </template>
 
 <script>
-import Header from '../views/components/Header'
+import Header from "../views/components/Header"
 
 export default {
   name: "Home",
@@ -24,7 +25,8 @@ export default {
   data() {
     return {
       token: '',
-      gifPath: '../assets/21008-social-media-concept.gif'
+      gifPath: '../assets/21008-social-media-concept.gif',
+      loading:false,
     }
   },
   methods: {
@@ -57,8 +59,15 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css';
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 10px;
+  margin-inline-end: 0;
+}
 .main {
   display: flex;
   flex-direction: column;

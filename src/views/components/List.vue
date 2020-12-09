@@ -27,5 +27,9 @@ export default {
 }
 .listNumber {
   color:  #FF3057;
+  font-size: 2vw;
+}
+.listTitle {
+  font-size: 2vw;
 }
 </style>

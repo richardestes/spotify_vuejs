@@ -7,6 +7,7 @@
     <router-link to="/stats" class="header-link">Stats</router-link>
     <router-link to="/social" class="header-link">Social</router-link>
     <router-link to="/about" class="header-link">About</router-link>
+    <router-link to="/register" class="header-link">Register</router-link> 
   </div>
 </div>
 </template>
@@ -23,7 +24,7 @@ export default {
   padding: 10px;
   color: #2c3e50;
   font-size: calc(0.3rem + 1vw);
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 }
 .header-logo-container {
   display: flex;

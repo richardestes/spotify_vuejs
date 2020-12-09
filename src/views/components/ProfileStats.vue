@@ -58,17 +58,17 @@ export default {
 }
 .profileContainer {
   display:flex;
-  width: 25%;
+  width: 35%;
   justify-content: center;
 }
 .statsContainer {
-  width:75%;
+  width:55%;
   display: flex;
 }
 .profilePicContainer {
   justify-content: center;
   width:8vw;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 .profilePic {
   border-radius: 50%;
