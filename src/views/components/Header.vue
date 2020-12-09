@@ -7,6 +7,7 @@
     <router-link to="/stats" class="header-link">Stats</router-link>
     <router-link to="/social" class="header-link">Social</router-link>
     <router-link to="/about" class="header-link">About</router-link>
+    <router-link to="/register" class="header-link">Register</router-link> 
   </div>
 </div>
 </template>

@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Ion Icons
+https://dev.to/devmount/how-to-use-ionicons-v5-with-vue-js-53g2

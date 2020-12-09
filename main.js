@@ -6,6 +6,7 @@ import LottieAnimation from "lottie-vuejs"; // import lottie-vuejs
  
 Vue.use(LottieAnimation); // add lottie-animation to your global scope
 Vue.config.productionTip = false
+Vue.config.ignoredElements = [/^ion-/]
 
 new Vue({
   router,
