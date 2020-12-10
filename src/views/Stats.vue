@@ -7,10 +7,8 @@
       <ProfileStats
         v-bind:displayName="userInfo.display_name"
         v-bind:username="userInfo.id"
-        v-bind:profilePic="userInfo.images[0].url"
         v-bind:songCount="userTracks.total"
         v-bind:playlistCount="userPlaylists.total"
-        v-bind:followerCount="userInfo.followers.total"
         v-bind:userUrl="userUrl"
      />
     </div>
@@ -93,16 +91,30 @@ export default {
       this.userPlaylists = response;
       return response;
     },
-    //TODO: Add time range parameter
-    async getTopTracks(token,time_range){
-      this.url = `https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}`;
-      const result = await fetch(this.url, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-        });
-      const response = await result.json();
-      this.userTopTracks = response;
-      switch(time_range){
+    async getTopTracks(token,timeRange) {
+      let dataCall = await callSpotifyApi(token,timeRange);
+      let retrievedData = await dataCall.json();
+      console.log(retrievedData);
+      async function callSpotifyApi(token,timeRange) {
+        console.log(token);
+        const body = JSON.stringify({token:token,timeRange:timeRange});
+        const response = await fetch(
+          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/test/getusertoptracks',
+          {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            body: body,
+            headers: {
+              "Content-Type": "application/json",
+            }
+          }
+        );
+        let rawData = await response;
+        return rawData;
+      }
+      switch(timeRange){ //TODO: Make this a seperate function
         case 'short_term':
           this.songButtonChoice = 'Past 4 Weeks';
           break;
@@ -113,30 +125,29 @@ export default {
           this.songButtonChoice = 'All Time';
           break;
       }
-      return response;
     },
-    //TODO: Add time range parameter
-    async getTopArtists(token,time_range) {
-      this.url = `https://api.spotify.com/v1/me/top/artists?time_range=${time_range}`;
-      const result = await fetch(this.url, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-      });
-      const response = await result.json();
-      this.userTopArtists = response;
-      switch(time_range){
-        case 'short_term':
-          this.artistButtonChoice = 'Past 4 Weeks';
-          break;
-        case 'medium_term':
-          this.artistButtonChoice = 'Past 6 Months';
-          break;
-        case 'long_term':
-          this.artistButtonChoice = 'All Time';
-          break;
-      }
-      return response;
-    }
+    // https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/dev/userinfo/topartists
+    // async getTopArtists(token,time_range) {
+    //   this.url = `https://api.spotify.com/v1/me/top/artists?time_range=${time_range}`;
+    //   const result = await fetch(this.url, {
+    //     method: 'GET',
+    //     headers: { 'Authorization': 'Bearer ' + token }
+    //   });
+    //   const response = await result.json();
+    //   this.userTopArtists = response;
+    //   switch(time_range){
+    //     case 'short_term':
+    //       this.artistButtonChoice = 'Past 4 Weeks';
+    //       break;
+    //     case 'medium_term':
+    //       this.artistButtonChoice = 'Past 6 Months';
+    //       break;
+    //     case 'long_term':
+    //       this.artistButtonChoice = 'All Time';
+    //       break;
+    //   }
+    //   return response;
+    // }
   },
   
   created() {

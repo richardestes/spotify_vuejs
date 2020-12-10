@@ -50,6 +50,7 @@ export default {
         headers: { 'Authorization': 'Bearer ' + token }
         });
       const response = await result.json();
+      console.log(response); //DEBUGGING
       if (response){
         this.userInfo = response;
         this.userId = this.userInfo.id;
