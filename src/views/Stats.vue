@@ -17,14 +17,14 @@
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopTrackNames" v-bind:listName="topSongHeader"/>
+      <List v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
       <h1 class="topArtistsTitle">Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopArtistNames" v-bind:listName="topArtistHeader"/>
+      <List v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader"/>
     </div>
   </div>
 </template>
