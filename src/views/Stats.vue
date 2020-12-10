@@ -95,6 +95,17 @@ export default {
       let dataCall = await callSpotifyApi(token,timeRange);
       let retrievedData = await dataCall.json();
       console.log(retrievedData);
+      switch(timeRange){
+        case 'short_term':
+          this.songButtonChoice = 'Past 4 Weeks';
+          break;
+        case 'medium_term':
+          this.songButtonChoice = 'Past 6 Months';
+          break;
+        case 'long_term':
+          this.songButtonChoice = 'All Time';
+          break;
+      }
       async function callSpotifyApi(token,timeRange) {
         console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
@@ -114,12 +125,22 @@ export default {
         let rawData = await response;
         return rawData;
       }
-      updateTimeRangeButton(timeRange,this.songButtonChoice);
     },
     async getTopArtists(token,timeRange) {
       let dataCall = await callSpotifyApi(token,timeRange);
       let retrievedData = await dataCall.json();
       console.log(retrievedData);
+      switch(timeRange){
+        case 'short_term':
+          this.artistButtonChoice = 'Past 4 Weeks';
+          break;
+        case 'medium_term':
+          this.artistButtonChoice = 'Past 6 Months';
+          break;
+        case 'long_term':
+          this.artistButtonChoice = 'All Time';
+          break;
+      }
       async function callSpotifyApi(token,timeRange) {
         console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
@@ -139,43 +160,7 @@ export default {
         let rawData = await response;
         return rawData;
       }
-      updateTimeRangeButton(timeRange,this.artistButtonChoice);
     },
-    updateTimeRangeButton(timeRange,button){
-      switch(timeRange){ //TODO: Make this a seperate function
-        case 'short_term':
-          button = 'Past 4 Weeks';
-          break;
-        case 'medium_term':
-          button = 'Past 6 Months';
-          break;
-        case 'long_term':
-          button = 'All Time';
-          break;
-      }
-    }
-    // https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/dev/userinfo/topartists
-    // async getTopArtists(token,time_range) {
-    //   this.url = `https://api.spotify.com/v1/me/top/artists?time_range=${time_range}`;
-    //   const result = await fetch(this.url, {
-    //     method: 'GET',
-    //     headers: { 'Authorization': 'Bearer ' + token }
-    //   });
-    //   const response = await result.json();
-    //   this.userTopArtists = response;
-    //   switch(time_range){
-    //     case 'short_term':
-    //       this.artistButtonChoice = 'Past 4 Weeks';
-    //       break;
-    //     case 'medium_term':
-    //       this.artistButtonChoice = 'Past 6 Months';
-    //       break;
-    //     case 'long_term':
-    //       this.artistButtonChoice = 'All Time';
-    //       break;
-    //   }
-    //   return response;
-    // }
   },
   
   created() {
