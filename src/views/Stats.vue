@@ -17,14 +17,14 @@
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopTracks" v-bind:listName="topSongHeader"/>
+      <List v-bind:list="userTopTrackNames" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
       <h1 class="topArtistsTitle">Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopArtists" v-bind:listName="topArtistHeader"/>
+      <List v-bind:list="userTopArtistNames" v-bind:listName="topArtistHeader"/>
     </div>
   </div>
 </template>
@@ -44,8 +44,10 @@ export default {
       userTracks: '',
       userPlaylists: '',
       url: '',
-      userTopTracks: '',
-      userTopArtists: '',
+      userTopTrackNames: [],
+      userTopTrackLinks: [],
+      userTopArtistNames: [],
+      userTopArtistLinks: [],
       topSongHeader: 'Top Songs',
       topArtistHeader: 'Top Artists',
       songButtonChoice: '',
@@ -94,7 +96,16 @@ export default {
     async getTopTracks(token,timeRange) {
       let dataCall = await callSpotifyApi(token,timeRange);
       let retrievedData = await dataCall.json();
-      console.log(retrievedData);
+      let response = retrievedData.body;
+      // clear so that songs don't get stuck/data overload
+      this.userTopTrackNames = [];
+      this.userTopTrackLinks = [];
+      response.forEach(obj=>{
+        this.userTopTrackNames.push(obj['Name']);
+        this.userTopTrackLinks.push(obj['Href']);
+      })
+      console.log(this.userTopTrackNames);
+      console.log(this.userTopTrackLinks);
       switch(timeRange){
         case 'short_term':
           this.songButtonChoice = 'Past 4 Weeks';
@@ -107,7 +118,7 @@ export default {
           break;
       }
       async function callSpotifyApi(token,timeRange) {
-        console.log(token);
+        // console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
         const response = await fetch(
           'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/getusertoptracks',
@@ -129,7 +140,16 @@ export default {
     async getTopArtists(token,timeRange) {
       let dataCall = await callSpotifyApi(token,timeRange);
       let retrievedData = await dataCall.json();
-      console.log(retrievedData);
+      let response = retrievedData.body;
+      // clear so that songs don't get stuck/data overload
+      this.userTopArtistNames = [];
+      this.userTopArtistLinks = [];
+      response.forEach(obj=>{
+        this.userTopArtistNames.push(obj['Name']);
+        this.userTopArtistLinks.push(obj['Href']);
+      })
+      console.log(this.userTopArtistNames);
+      console.log(this.userTopArtistLinks);
       switch(timeRange){
         case 'short_term':
           this.artistButtonChoice = 'Past 4 Weeks';
@@ -142,7 +162,7 @@ export default {
           break;
       }
       async function callSpotifyApi(token,timeRange) {
-        console.log(token);
+        // console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
         const response = await fetch(
           'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/getusertopartists',
@@ -174,8 +194,8 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
-          this.getTopTracks(this.token,"long_term");
-          this.getTopArtists(this.token,"long_term");
+          this.getTopTracks(this.token,"short_term"); // default display
+          this.getTopArtists(this.token,"short_term");
         });
       }
     }
@@ -189,8 +209,8 @@ export default {
         this.getUserInfo(this.token).then(()=>{
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
-          this.getTopTracks(this.token,"long_term");
-          this.getTopArtists(this.token,"long_term");
+          this.getTopTracks(this.token,"short_term");
+          this.getTopArtists(this.token,"short_term");
         });
       }      
     }
