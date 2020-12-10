@@ -38,6 +38,6 @@ export default {
 }
 .main a {
   text-decoration: none;
-  color: #0E0E0E;
+  color: #2c3e50;
 }
 </style>

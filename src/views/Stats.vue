@@ -10,6 +10,8 @@
         v-bind:songCount="userTracks.total"
         v-bind:playlistCount="userPlaylists.total"
         v-bind:userUrl="userUrl"
+        v-bind:profilePic="userInfo.images[0].url"
+        v-bind:followerCount="userInfo.followers.total"
      />
     </div>
     <div id="topTracks">
@@ -71,6 +73,7 @@ export default {
         this.userInfo = response;
         this.userId = this.userInfo.id;
         this.userUrl = 'https://open.spotify.com/user/' + this.userId;
+        console.log(this.userInfo);
       }
       return response;
     },

@@ -1,9 +1,9 @@
 <template>
   <div class="mainContainer">
     <div class="profileContainer">
-      <!-- <div class="profilePicContainer">
+      <div class="profilePicContainer">
         <a v-bind:href="userUrl"><img v-bind:url="userUrl" v-bind:src=profilePic class="profilePic"/></a>
-      </div> -->
+      </div>
       <div class ="profileNameContainer">
         <a v-bind:href="userUrl" class="profileFullName">{{displayName}}</a>
         <a v-bind:href="userUrl" class="profileUsername">@{{username}}</a>
@@ -19,7 +19,7 @@
         <h2 class="statCountTitle">Playlists Created</h2>
       </div>
       <div class="followersContainer">
-        <!-- <h1 class="statCount">{{followerCount}}</h1> -->
+        <h1 class="statCount">{{followerCount}}</h1>
         <h2 class="statCountTitle">Followers</h2>
       </div>
     </div>
@@ -32,10 +32,10 @@ export default {
   props: {
     displayName: String,
     username: String,
-    // profilePic: String,
+    profilePic: String,
     songCount: Number,
     playlistCount: Number,
-    // followerCount: Number,
+    followerCount: Number,
     userUrl: String,
   },
   methods: {
