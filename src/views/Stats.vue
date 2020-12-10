@@ -110,7 +110,7 @@ export default {
         console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
         const response = await fetch(
-          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/test/getusertoptracks',
+          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/getusertoptracks',
           {
             method: 'POST',
             mode: 'cors',
@@ -145,7 +145,7 @@ export default {
         console.log(token);
         const body = JSON.stringify({token:token,timeRange:timeRange});
         const response = await fetch(
-          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/test/getusertopartists',
+          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/getusertopartists',
           {
             method: 'POST',
             mode: 'cors',
