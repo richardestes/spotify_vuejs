@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <li class="listItem" v-for="(item,index) in list.items" :key="item.name" >
-      <h3 class="listNumber">{{index+1}}</h3><h3 class="listTitle"> - {{item.name}}</h3>
+    <li class="listItem" v-for="(item,index) in list" :key="item" >
+      <h3 class="listNumber">{{index+1}}</h3><h3 class="listTitle"> - {{item}}</h3>
     </li>
   </div>
 </template>
@@ -10,8 +10,15 @@
 export default {
   name: "List",
   props: {
-    list: Object,
     listName: String
+  },
+  data(){
+    return {
+      list: []
+    }
+  },
+  created() {
+    console.log(this.list);
   }
 }
 </script>
