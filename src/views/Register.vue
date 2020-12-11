@@ -66,7 +66,7 @@ export default {
         console.log(token);
         const body = {token:token};
         const response = await fetch(
-          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/dev/register',
+          'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/register',
           {
             method: 'POST',
             mode: 'cors',
