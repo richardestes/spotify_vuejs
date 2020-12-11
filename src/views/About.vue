@@ -5,6 +5,7 @@
     </div>
     <h2>About</h2>
     <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
+    <h3>Spotify stats are refreshed daily</h3>
   </div>
 </template>
 
