@@ -3,27 +3,33 @@
     <div class="nav">
       <Header />
     </div>
-    <h2>About</h2>
-    <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
-    <div class="registerContainer">
-      <button class="registerButton" v-on:click="registerUser(token)">Get Started</button>
+    <LoadingScreen v-if="loading"></LoadingScreen>
+    <div id="body" v-if="!loading">
+      <h2>About</h2>
+      <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
+      <div class="registerContainer">
+        <button class="registerButton" v-on:click="registerUser(token)">Get Started</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Header from "../views/components/Header"
+import LoadingScreen from "../views/components/LoadingScreen"
 
 export default {
   components: {
-    Header
+    Header,
+    LoadingScreen
   },
   data() {
     return {
       token: '',
       userInfo: '',
       userUrl: '',
-      userId: ''
+      userId: '',
+      loading: false,
     }
   },
   created() {
@@ -59,8 +65,12 @@ export default {
       return response;
     },
     async registerUser(token) {
+      this.loading = true;
+      console.log(this.loading);
       let dataCall = await userLibraryUpload(token);
       let retrievedData = await dataCall.json();
+      this.loading = false;
+      console.log(this.loading);
       console.log(retrievedData);
       async function userLibraryUpload(token) {
         console.log(token);
@@ -119,7 +129,7 @@ export default {
    * going to be trial and error: */
   padding: 0.25rem 0.35rem;
   font-size: calc(1rem + 1vw);
-  position:absolute;
-  bottom:40px;
+  /* position:absolute;
+  bottom:40px; */
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <div v-if="loading">Loading some data</div>
     <div class="nav">
       <Header />
     </div>
@@ -26,7 +25,6 @@ export default {
     return {
       token: '',
       gifPath: '../assets/21008-social-media-concept.gif',
-      loading:false,
     }
   },
   methods: {

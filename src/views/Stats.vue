@@ -3,7 +3,8 @@
     <div id="nav">
       <Header />
     </div>
-    <div id="profileStats">
+    <LoadingScreen v-if="loading"></LoadingScreen>
+    <div id="profileStats" v-if="!loading">
       <ProfileStats
         v-bind:displayName="userInfo.display_name"
         v-bind:username="userInfo.id"
@@ -19,14 +20,16 @@
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader"/>
+      <LoadingScreen v-if="loading"></LoadingScreen>
+      <List v-if="!loading" v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
       <h1 class="topArtistsTitle">Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
-      <List v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader"/>
+      <LoadingScreen v-if="loading"></LoadingScreen>
+      <List v-if="!loading" v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader"/>
     </div>
   </div>
 </template>
@@ -35,6 +38,7 @@
 import Header from "../views/components/Header"
 import ProfileStats from "../views/components/ProfileStats"
 import List from "../views/components/List"
+import LoadingScreen from "../views/components/LoadingScreen"
 
 export default {
   name: "Stats",
@@ -55,15 +59,18 @@ export default {
       songButtonChoice: '',
       artistButtonChoice: '',
       userUrl: '',
+      loading: false
     }
   },
   components: {
     Header,
     ProfileStats,
-    List
+    List,
+    LoadingScreen
   },
   methods : {
     async getUserInfo(token){
+      this.loading = true;
       const result = await fetch(`https://api.spotify.com/v1/me`, {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
@@ -75,6 +82,7 @@ export default {
         this.userUrl = 'https://open.spotify.com/user/' + this.userId;
         console.log(this.userInfo);
       }
+      this.loading = false;
       return response;
     },
     async getUserTracks(token){
