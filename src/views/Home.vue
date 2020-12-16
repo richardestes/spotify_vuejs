@@ -1,8 +1,6 @@
 <template>
   <div class="main">
-    <div class="nav">
-      <Header />
-    </div>
+    <h1>SpotifyStats.io</h1>
     <div class="getStartedContainer">
       <img v-bind:src="require('../assets/21008-social-media-concept.gif')" class="getStartedGif" />
       <button class="getStartedButton" v-on:click="redirectToSpotify">Get Started</button>
@@ -11,7 +9,6 @@
 </template>
 
 <script>
-import Header from "../views/components/Header"
 
 export default {
   name: "Home",
@@ -19,7 +16,6 @@ export default {
     msg: String,
   },
   components : {
-    Header
   },
   data() {
     return {
@@ -58,14 +54,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css';
+// @import 'https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css';
 
-figure {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 10px;
-  margin-inline-end: 0;
-}
+// figure {
+//   margin-block-start: 0;
+//   margin-block-end: 0;
+//   margin-inline-start: 10px;
+//   margin-inline-end: 0;
+// }
 .main {
   display: flex;
   flex-direction: column;
@@ -95,7 +91,8 @@ figure {
   align-items: center;
 }
 .getStartedGif {
-  width: 20vw;
+  width: 13vw;
   padding-bottom: 40px;
+  padding-top: 40px;
 }
 </style>

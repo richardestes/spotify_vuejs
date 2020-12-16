@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Social from '../views/Social.vue'
+import Compare from '../views/Compare.vue'
 import Stats from '../views/Stats.vue'
 import About from '../views/About.vue'
 import Register from '../views/Register.vue'
@@ -21,9 +21,9 @@ const routes = [
     component: Stats,
   },
   {
-    path: '/social',
-    name: 'Social',
-    component: Social
+    path: '/compare',
+    name: 'Compare',
+    component: Compare
   },
   {
     path: '/about',

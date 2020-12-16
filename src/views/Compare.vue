@@ -3,7 +3,8 @@
     <div class="nav">
       <Header />
     </div>
-    <h2>Social</h2>
+    <h2>Compare</h2>
+    <h3>Coming soon...</h3>
   </div>
 </template>
 
@@ -28,9 +29,7 @@ export default {
 .main {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
-  /* width: 100%; */
+  width: 100%;
+  background-color: #FFFFF9;
 }
 </style>

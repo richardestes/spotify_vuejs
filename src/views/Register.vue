@@ -8,7 +8,7 @@
       <h2>About</h2>
       <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
       <div class="registerContainer">
-        <button class="registerButton" v-on:click="registerUser(token)">Get Started</button>
+        <button class="registerButton" v-on:click="registerUser(token)">Register User</button>
       </div>
     </div>
   </div>
