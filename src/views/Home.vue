@@ -32,7 +32,7 @@ export default {
       // http://localhost:8080/#/ http://192.168.1.83:8081/#/ https://spotifystats.io/stats/#/
       var origin = window.location;
       var redirectUri = encodeURIComponent(origin + 'stats'); // Use this with hash mode on
-      var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played'
+      var scopes = 'user-read-private playlist-read-private user-library-read user-top-read user-read-recently-played playlist-modify-private playlist-modify-public'
       var requestUrl = spotifyEndpoint + '?client_id=' + clientId + '&response_type=' + responseType + '&redirect_uri=' + redirectUri + '&scope=' + scopes + '&state=' + state;
       window.location = requestUrl;
       return;

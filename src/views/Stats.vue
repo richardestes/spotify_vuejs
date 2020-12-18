@@ -197,7 +197,8 @@ export default {
   created() {
     if (this.$route.hash) {
       // Gets token
-      var access_token = this.$route.hash.substring(14,206);
+      var url = this.$route.hash;
+      var access_token = url.split("=")[1].split("&")[0]
       this.token = access_token;
       localStorage.setItem('token',this.token);
       // Main GET
