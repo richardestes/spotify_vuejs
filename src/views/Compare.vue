@@ -7,6 +7,8 @@
       <input class="searchBar" v-model.trim="userIdToSearch" placeholder="Enter Spotify User Link">
       <button class="submitButton" v-on:click="searchUser">Search</button>
     </div>
+    <div class="resultsContainer">
+    </div>
   </div>
 </template>
 
@@ -59,6 +61,10 @@ export default {
   padding: 10px;
   font-size: 12px;
   font-weight: bold;
+  text-emphasis: none;
+}
+.searchContainer input:focus {
+  outline:none;
 }
 .submitButton{
   width: 150px;
@@ -67,5 +73,9 @@ export default {
   border: none;
   font-size: 14px;
   font-weight: bold;
+}
+.resultsContainer {
+  background-color: #FFFFF9;
+  height: 76vh;
 }
 </style>
