@@ -3,8 +3,10 @@
     <div class="nav">
       <Header />
     </div>
-    <h2>Compare</h2>
-    <h3>Coming soon...</h3>
+    <div class="searchContainer">
+      <input class="searchBar" v-model.trim="userIdToSearch" placeholder="Enter Spotify User Link">
+      <button class="submitButton" v-on:click="searchUser">Search</button>
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,20 @@ export default {
   },
   data() {
     return {
-      token: ''
+      token: '',
+      userIdToSearch: '',
+    }
+  },
+  methods: {
+    searchUser(){
+      if (this.userIdToSearch){
+        console.log(this.userIdToSearch);
+        window.alert(this.userIdToSearch);
+      }
+      else {
+        console.log("No User ID found");
+        window.alert("No User ID found");  
+      }
     }
   },
   created() {
@@ -31,5 +46,26 @@ export default {
   flex-direction: column;
   width: 100%;
   background-color: #FFFFF9;
+}
+.searchContainer {
+  align-items: center;
+}
+.searchBar {
+  background-color: #DFDFDF;
+  width: 30vw;
+  height: 60px;
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.submitButton{
+  width: 150px;
+  height: 79px; 
+  text-decoration: none;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>

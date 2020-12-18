@@ -5,7 +5,7 @@
     </div>
     <LoadingScreen v-if="loading"></LoadingScreen>
     <div id="body" v-if="!loading">
-      <h2>About</h2>
+      <h2>Register User</h2>
       <img v-bind:src="require('../assets/cassette_still.gif')" class="aboutImage" />
       <div class="registerContainer">
         <button class="registerButton" v-on:click="registerUser(token)">Register User</button>
