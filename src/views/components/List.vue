@@ -15,7 +15,7 @@ export default {
     listName: String
   },
   created() {
-    console.log(this.list);
+    // console.log(this.list);
   }
 }
 </script>

@@ -3,7 +3,7 @@
     <div id="nav">
       <Header />
     </div>
-    <LoadingScreen v-if="loading"></LoadingScreen>
+    <LoadingScreen v-if="loading" />
     <div id="profileStats" v-if="!loading">
       <ProfileStats
         v-bind:displayName="userInfo.display_name"
@@ -20,7 +20,7 @@
       <button class="toggleButton" v-on:click="getTopTracks(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
-      <LoadingScreen v-if="loading"></LoadingScreen>
+      <LoadingScreen v-if="loading" />
       <List v-if="!loading" v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader"/>
     </div>
     <div id="topArtists">
@@ -28,7 +28,7 @@
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
-      <LoadingScreen v-if="loading"></LoadingScreen>
+      <LoadingScreen v-if="loading" />
       <List v-if="!loading" v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader"/>
     </div>
   </div>
@@ -204,6 +204,7 @@ export default {
       // Main GET
       if (this.token){
         this.getUserInfo(this.token).then(()=>{
+          localStorage.setItem('userID',this.userId);
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
           this.getTopTracks(this.token,"short_term"); // default display
@@ -219,6 +220,7 @@ export default {
       // Main GET
       if (this.token){
         this.getUserInfo(this.token).then(()=>{
+          localStorage.setItem('userID',this.userId);
           this.getUserTracks(this.token);
           this.getUserPlaylists(this.token,this.userId);
           this.getTopTracks(this.token,"short_term");
