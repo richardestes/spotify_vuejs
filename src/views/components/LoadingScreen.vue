@@ -1,7 +1,6 @@
 <template>
   <div id = "main">
     <img v-bind:src="require('../../assets/loading.gif')" class="loadingGif" />
-    <!-- <h2>Loading...</h2> -->
   </div>
 </template>
 

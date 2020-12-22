@@ -38,7 +38,7 @@ export default {
       userToComparePublicPlaylistNames: '',
       userToComparePublicPlaylistLinks: '',
       userToComparePublicPlaylistCount: '',
-      userInDatabase: false,
+      userInDatabase: false, //use this to dynamically display results
       listTitle: 'Public Playlists',
       loading:false,
       ordered: false
@@ -50,19 +50,9 @@ export default {
         this.loading = true;
         const body = JSON.stringify({token:this.token,userId:this.userId,userIdToCompare:this.userToCompareId});
         const urlCheck = this.userToCompareId.substring(0,30); // https://open.spotify.com/user/
+        const awsUrl = 'https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/compareuser';
         if (urlCheck == 'https://open.spotify.com/user/'){
-          const response = await fetch('https://y0pt80cel4.execute-api.us-west-1.amazonaws.com/beta/compareuser',
-          {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'same-origin',
-            body:body,
-            headers: {
-              "Content-Type": "application/json",
-            }
-          }
-          );
+          const response = await fetch(awsUrl,{ method: 'POST',mode: 'cors',cache: 'no-cache',credentials: 'same-origin',body:body,headers: {"Content-Type": "application/json",}});
           let rawData = await response;
           let dataJson = await rawData.json();
           console.log(dataJson.body);
@@ -71,7 +61,6 @@ export default {
               this.userToCompareDisplayName = dataJson.body.displayName;
               this.userToCompareId = dataJson.body.userId;
               this.userToCompareFollowerCount = dataJson.body.followerCount;
-              // this.loading = false;
             }
             else if (dataJson.body.UserInfoToCompare.PlaylistNames) {
               this.userToCompareDisplayName = dataJson.body.UserInfoToCompare.display_name;
@@ -80,7 +69,6 @@ export default {
               this.userToComparePublicPlaylistLinks = dataJson.body.PlaylistLinks;
               this.userToComparePublicPlaylistCount = dataJson.body.PlaylistNames.length;
               this.userToCompareFollowerCount = dataJson.body.UserInfoToCompare.followers.total;
-              // this.loading = false;
             }
             this.loading = false;
           }
