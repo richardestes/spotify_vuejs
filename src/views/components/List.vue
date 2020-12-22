@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <li class="listItem" v-for="(item,index) in list" :key="item" >
-      <h3 class="listNumber">{{index+1}}</h3><h3 class="listTitle"> - <a v-bind:href="listLinks[index]"> {{item}}</a></h3>
+      <h3 v-if="ordered" class="listNumber">{{index+1}} - </h3><h3 class="listTitle"><a v-bind:href="listLinks[index]"> {{item}}</a></h3>
     </li>
   </div>
 </template>
@@ -12,7 +12,8 @@ export default {
   props: {
     list: Array,
     listLinks: Array,
-    listName: String
+    listName: String,
+    ordered: Boolean
   },
   created() {
     // console.log(this.list);

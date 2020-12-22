@@ -21,15 +21,15 @@
       <button class="toggleButton" v-on:click="getTopTracks(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopTracks(token,'long_term')">All Time</button>
       <LoadingScreen v-if="loading" />
-      <List v-if="!loading" v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader"/>
+      <List v-if="!loading" v-bind:list="userTopTrackNames" v-bind:listLinks="userTopTrackLinks" v-bind:listName="topSongHeader" v-bind:ordered="true"/>
     </div>
-    <div id="topArtists">
+    <div id="topArtists"> 
       <h1 class="topArtistsTitle">Top Artists ({{artistButtonChoice}})</h1>
       <button class="toggleButton" v-on:click="getTopArtists(token,'short_term')">Past 4 Weeks</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'medium_term')">Past 6 Months</button>
       <button class="toggleButton" v-on:click="getTopArtists(token,'long_term')">All Time</button>
       <LoadingScreen v-if="loading" />
-      <List v-if="!loading" v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader"/>
+      <List v-if="!loading" v-bind:list="userTopArtistNames" v-bind:listLinks="userTopArtistLinks" v-bind:listName="topArtistHeader" v-bind:ordered="true"/>
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
       songButtonChoice: '',
       artistButtonChoice: '',
       userUrl: '',
-      loading: false
+      loading: false,
     }
   },
   components: {
