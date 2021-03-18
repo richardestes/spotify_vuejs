@@ -1,21 +1,19 @@
 <template>
-<div class="header">
-  <div class="header-logo-container">
-      <router-link to="/" class="header-logo">SpotifyStats.io</router-link>
+  <div class="header">
+    <div class="header-logo-container">
+      <router-link to="/" class="header-logo">SpotifyStats.io PoC</router-link>
+    </div>
+    <div class="header-links">
+      <router-link to="/stats" class="header-link">Stats</router-link>
+      <router-link to="/register" class="header-link">Register</router-link>
+    </div>
   </div>
-  <div class="header-links">
-    <router-link to="/stats" class="header-link">Stats</router-link>
-    <router-link to="/compare" class="header-link">Compare</router-link>
-    <router-link to="/about" class="header-link">About</router-link>
-    <router-link to="/register" class="header-link">Register</router-link> 
-  </div>
-</div>
 </template>
 
 <script>
 export default {
-  name : "Header",
-}
+  name: "Header",
+};
 </script>
 
 <style scoped>
@@ -33,7 +31,7 @@ export default {
 }
 .header-logo {
   text-decoration: none;
-  color: #0E0E0E;
+  color: #0e0e0e;
   font-weight: bold;
 }
 .header-links {
@@ -41,14 +39,14 @@ export default {
   justify-content: flex-end;
   width: 50vw;
 }
-.header-links a{
+.header-links a {
   padding-left: 15px;
   padding-right: 15px;
   text-decoration: none;
-  color: #0E0E0E;
+  color: #0e0e0e;
   font-weight: bold;
 }
 .header-links a:hover {
-  color:  #FF3057;
+  color: #ff3057;
 }
 </style>
